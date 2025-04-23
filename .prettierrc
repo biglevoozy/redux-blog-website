@@ -1,15 +1,30 @@
 {
-  "plugins": ["@trivago/prettier-plugin-sort-imports"],
-  "useTabs": true,
-  "bracketSpacing": true,
-  "importOrder": [
-    "<THIRD_PARTY_MODULES>",
-    "^@/components/(.*)$",
-    "^@/ui/(.*)$",
-    "^\\./assets/(.*)$",
-    "^(?!.*\\.css$)(../.*)$",
-    "^(?!.*\\.css$)(./.*)$",
-    ".*\\.css$"
-  ],
-  "importOrderSeparation": true
+	"semi": true,
+	"singleQuote": true,
+	"jsxSingleQuote": false,
+	"bracketSpacing": true,
+	"tabWidth": 2,
+	"arrowParens": "always",
+	"plugins": ["@trivago/prettier-plugin-sort-imports"],
+	"importOrder": [
+		"<THIRD_PARTY_MODULES>",
+		"^./components/(.*)$",
+		"^./ui/(.*)$",
+		"^./providers/(.*)$",
+		"^./services/(.*)$",
+		"^./store/(.*)$",
+		"^./hooks/(.*)$",
+		"^./constants/(.*)$",
+		"^./config/(.*)$",
+		"^./utils/(.*)$",
+		"^./types/(.*)$",
+		"^./api/(.*)$",
+		"^./routes/(.*)$",
+		"^\\./assets/(.*)$",
+		"^(?!.*\\.css$)(../.*)$",
+		"^(?!.*\\.css$)(./.*)$",
+		".*\\.css$"
+	],
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true
 }

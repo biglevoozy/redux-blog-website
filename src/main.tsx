@@ -1,7 +1,15 @@
-import { createRoot } from "react-dom/client";
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
 
-import "./assets/styles/global.css";
-import "./assets/styles/reset.css";
-import App from "./App";
+import Home from './components/Home/Home';
 
-createRoot(document.getElementById("root")!).render(<App />);
+import './assets/styles/global.css';
+import './assets/styles/reset.css';
+
+import { store } from './redux/store/store';
+
+createRoot(document.getElementById('root')!).render(
+  <Provider store={store}>
+    <Home />
+  </Provider>,
+);
