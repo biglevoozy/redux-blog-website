@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { useEffect } from 'react';
-import { fetchPosts } from 'src/redux/features/posts/postsSlice';
+import { fetchPosts } from 'src/components/Home/Posts/postsSlice';
 import { useAppDispatch, useAppSelector } from 'src/redux/hooks';
 import { IPost } from 'src/types/post.interface';
 
@@ -9,9 +9,7 @@ import PostList from './PostList/PostList';
 import styles from './Posts.module.css';
 
 const Posts = () => {
-  const posts = useAppSelector((state) => state.posts.posts);
-  const status = useAppSelector((state) => state.posts.status);
-  const error = useAppSelector((state) => state.posts.error);
+  const { posts, status, error } = useAppSelector((state) => state.posts);
 
   const dispatch = useAppDispatch();
 
@@ -27,7 +25,7 @@ const Posts = () => {
   }, [dispatch]);
 
   return (
-    <div className={styles.wrapper}>
+    <div data-testid="posts-div" className={styles.wrapper}>
       <PostList
         heading="All posts: "
         posts={posts}

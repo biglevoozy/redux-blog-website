@@ -6,7 +6,7 @@ interface InputProps {
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   value: string | number;
   id: string;
-  type: string;
+  type?: string;
   placeholder: string;
 }
 
@@ -23,6 +23,7 @@ const Input = ({
       <input
         className={styles.input}
         onChange={onChange}
+        placeholder={placeholder}
         value={value}
         type={type}
         id={id}

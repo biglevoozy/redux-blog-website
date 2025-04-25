@@ -2,7 +2,7 @@ import styles from './Post.module.css';
 
 interface PostProps {
   title: string;
-  userId: string;
+  userId: string | number;
   body: string;
 }
 

@@ -1,5 +1,9 @@
 import counterReducer from './counterSlice';
-import { decrement, increment, reset } from './counterSlice';
+import {
+  decrementCounter,
+  incrementCounter,
+  resetCounter,
+} from './counterSlice';
 
 describe('counterSlice', () => {
   it('should return default state when passed an empty action', () => {
@@ -9,7 +13,7 @@ describe('counterSlice', () => {
   });
 
   it('should increment counter by one', () => {
-    const action = { type: increment.type };
+    const action = { type: incrementCounter.type };
     const state = { count: 0 };
 
     const result = counterReducer(state, action);
@@ -18,7 +22,7 @@ describe('counterSlice', () => {
   });
 
   it('should decrement counter by one', () => {
-    const action = { type: decrement.type };
+    const action = { type: decrementCounter.type };
     const state = { count: 0 };
 
     const result = counterReducer(state, action);
@@ -27,7 +31,7 @@ describe('counterSlice', () => {
   });
 
   it('should reset counter to zero', () => {
-    const action = { type: reset.type };
+    const action = { type: resetCounter.type };
     const state = { count: 10 };
 
     const result = counterReducer(state, action);

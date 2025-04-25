@@ -39,7 +39,7 @@ const postsSlice = createSlice({
       })
       .addCase(addPost.fulfilled, (state, action) => {
         state.status = 'fulfilled';
-        state.posts = [action.payload, ...state.posts];
+        state.posts = [...state.posts, action.payload];
       })
       .addCase(addPost.rejected, (state, action) => {
         state.status = 'rejected';

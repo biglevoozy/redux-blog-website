@@ -16,6 +16,7 @@ const Textarea = ({ onChange, value, id, placeholder }: TextareaProps) => {
       <textarea
         className={styles.textarea}
         onChange={onChange}
+        placeholder={placeholder}
         value={value}
         id={id}
       />

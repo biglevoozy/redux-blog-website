@@ -1,8 +1,8 @@
 import { Middleware, configureStore } from '@reduxjs/toolkit';
-import counterReducer from 'src/redux/features/counter/counterSlice';
-import formReducer from 'src/redux/features/form/formSlice';
-import postsReducer from 'src/redux/features/posts/postsSlice';
-import { actionLogger } from 'src/redux/middleware/actionLogger';
+import counterReducer from 'src/components/Home/Counter/counterSlice';
+import formReducer from 'src/components/Home/Form/formSlice';
+import postsReducer from 'src/components/Home/Posts/postsSlice';
+import { logger } from 'src/redux/middleware/logger';
 
 export const store = configureStore({
   reducer: {
@@ -11,8 +11,9 @@ export const store = configureStore({
     form: formReducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().prepend(actionLogger as Middleware),
+    getDefaultMiddleware().concat(logger as Middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+export type AppState = typeof store;
