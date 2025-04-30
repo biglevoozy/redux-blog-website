@@ -8,11 +8,12 @@ import Heading from 'src/components/ui/Heading/Heading';
 import Input from 'src/components/ui/Input/Input';
 import Textarea from 'src/components/ui/Textarea/Textarea';
 import { useAppDispatch, useAppSelector } from 'src/redux/hooks';
+import { getFormSelectorRoot } from 'src/redux/selectors';
 
 import styles from './Form.module.css';
 
 const Form = () => {
-  const { title, body, userId } = useAppSelector((state) => state.form);
+  const { title, body, userId } = useAppSelector(getFormSelectorRoot);
 
   const dispatch = useAppDispatch();
 

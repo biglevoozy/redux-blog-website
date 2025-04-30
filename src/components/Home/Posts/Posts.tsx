@@ -1,24 +1,21 @@
-import { createSelector } from '@reduxjs/toolkit';
 import { useEffect } from 'react';
 import { fetchPosts } from 'src/components/Home/Posts/postsSlice';
 import { useAppDispatch, useAppSelector } from 'src/redux/hooks';
-import { IPost } from 'src/types/post.interface';
+import {
+  getPostsSelectorRoot,
+  longTitlePostsSelector,
+} from 'src/redux/selectors';
 
 import PostList from './PostList/PostList';
 
 import styles from './Posts.module.css';
 
 const Posts = () => {
-  const { posts, status, error } = useAppSelector((state) => state.posts);
+  const { posts, status, error } = useAppSelector(getPostsSelectorRoot);
 
   const dispatch = useAppDispatch();
 
-  const filterSelector = createSelector(
-    (state) => state.posts.posts,
-    (posts) => posts.filter((post: IPost) => post.title.length > 20),
-  );
-
-  const filteredPosts = useAppSelector(filterSelector);
+  const filteredPosts = useAppSelector(longTitlePostsSelector);
 
   useEffect(() => {
     dispatch(fetchPosts());

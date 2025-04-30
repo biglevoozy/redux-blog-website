@@ -1,17 +1,11 @@
-import { render, screen } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import { store } from 'src/redux/store/store';
+import { renderWithProviders } from 'src/tests/utils/renderWIthProviders';
 
 import Posts from './Posts';
 
 describe('test Posts', () => {
   it('should render Posts properly', () => {
-    render(
-      <Provider store={store}>
-        <Posts />
-      </Provider>,
-    );
+    const { getByTestId } = renderWithProviders(<Posts />);
 
-    expect(screen.getByTestId('posts-div')).toBeInTheDocument();
+    expect(getByTestId('posts-div')).toBeInTheDocument();
   });
 });

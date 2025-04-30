@@ -1,29 +1,19 @@
-import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Provider } from 'react-redux';
-import { store } from 'src/redux/store/store';
+import { renderWithProviders } from 'src/tests/utils/renderWIthProviders';
 
 import Counter from './Counter';
 
 describe('test Counter', () => {
   it('should render Counter properly', () => {
-    render(
-      <Provider store={store}>
-        <Counter />
-      </Provider>,
-    );
+    const { getByText } = renderWithProviders(<Counter />);
 
-    expect(screen.getByText(/Counter:/i)).toBeInTheDocument();
+    expect(getByText(/Counter:/i)).toBeInTheDocument();
   });
 
   it('should properly increment, decrement and reset counter state', async () => {
     const user = userEvent.setup();
 
-    const { getByText } = render(
-      <Provider store={store}>
-        <Counter />
-      </Provider>,
-    );
+    const { getByText } = renderWithProviders(<Counter />);
 
     const btnIncrement = getByText('Increment');
     const btnDecrement = getByText('Decrement');

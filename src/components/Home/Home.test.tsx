@@ -1,17 +1,11 @@
-import { render, screen } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import { store } from 'src/redux/store/store';
+import { renderWithProviders } from 'src/tests/utils/renderWIthProviders';
 
 import Home from './Home';
 
 describe('test Home', () => {
   it('should properly render Home component', () => {
-    render(
-      <Provider store={store}>
-        <Home />
-      </Provider>,
-    );
+    const { getByText } = renderWithProviders(<Home />);
 
-    expect(screen.getByText(/Redux /i)).toBeInTheDocument();
+    expect(getByText(/Redux /i)).toBeInTheDocument();
   });
 });

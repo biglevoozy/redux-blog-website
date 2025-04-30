@@ -1,29 +1,19 @@
-import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Provider } from 'react-redux';
-import { store } from 'src/redux/store/store';
+import { renderWithProviders } from 'src/tests/utils/renderWIthProviders';
 
 import Form from './Form';
 
 describe('test Form', () => {
   it('should properly render a Form', () => {
-    render(
-      <Provider store={store}>
-        <Form />
-      </Provider>,
-    );
+    const { getByText } = renderWithProviders(<Form />);
 
-    expect(screen.getByText('Add your post')).toBeInTheDocument();
+    expect(getByText('Add your post')).toBeInTheDocument();
   });
 
   it('should properly handle user input changes', async () => {
     const user = userEvent.setup();
 
-    const { getByPlaceholderText, getByText } = render(
-      <Provider store={store}>
-        <Form />
-      </Provider>,
-    );
+    const { getByPlaceholderText, getByText } = renderWithProviders(<Form />);
 
     const inputUserId = getByPlaceholderText(/Your id:/i);
     const inputTitle = getByPlaceholderText(/Title of your post:/i);

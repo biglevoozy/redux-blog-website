@@ -6,11 +6,12 @@ import {
 import Button from 'src/components/ui/Button/Button';
 import Heading from 'src/components/ui/Heading/Heading';
 import { useAppDispatch, useAppSelector } from 'src/redux/hooks';
+import { counterSelector } from 'src/redux/selectors';
 
 import styles from './Counter.module.css';
 
 const Counter = () => {
-  const count = useAppSelector((state) => state.counter.count);
+  const count = useAppSelector(counterSelector);
   const dispatch = useAppDispatch();
 
   return (

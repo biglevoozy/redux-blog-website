@@ -1,17 +1,18 @@
-import { Middleware, configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import counterReducer from 'src/components/Home/Counter/counterSlice';
 import formReducer from 'src/components/Home/Form/formSlice';
 import postsReducer from 'src/components/Home/Posts/postsSlice';
-import { logger } from 'src/redux/middleware/logger';
+import logger from 'src/redux/middleware/logger';
+
+export const RootReducer = combineReducers({
+  counter: counterReducer,
+  posts: postsReducer,
+  form: formReducer,
+});
 
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-    posts: postsReducer,
-    form: formReducer,
-  },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(logger as Middleware),
+  reducer: RootReducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

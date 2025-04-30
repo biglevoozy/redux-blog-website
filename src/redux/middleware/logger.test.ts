@@ -1,4 +1,4 @@
-import { logger } from './logger';
+import logger from './logger';
 
 describe('test logger', () => {
   const mockStore = {
@@ -17,7 +17,7 @@ describe('test logger', () => {
 
     console.log = jest.fn();
 
-    logger()(next)(action);
+    logger(mockStore)(next)(action);
 
     expect(console.log).toHaveBeenCalledWith('TEST_ACTION');
     expect(next).toHaveBeenCalledWith(action);
