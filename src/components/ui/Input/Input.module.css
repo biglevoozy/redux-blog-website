@@ -4,9 +4,23 @@
   gap: 6px;
 }
 
+.label > span {
+  position: absolute;
+
+  height: 30px;
+
+  padding: 8px 12px 0px 12px;
+
+  border-radius: 12px 12px 0 0;
+  background-color: var(--white);
+
+  transition: all 0.3s ease-in;
+}
+
 .input {
-  padding: 6px 12px;
-  border-radius: 12px;
+  margin: 38px 0 0 0;
+  padding: 10px 12px;
+  border-radius: 0 12px 12px 12px;
 
   border: none;
 
@@ -15,4 +29,11 @@
 
 .input:focus {
   outline: 2px solid var(--yellow-800);
+}
+
+.label:focus-within span {
+  box-shadow:
+    0 -2px 0 0 var(--yellow-800),
+    -2px 0 0 0 var(--yellow-800),
+    2px 0 0 0 var(--yellow-800);
 }

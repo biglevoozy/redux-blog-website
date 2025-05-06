@@ -1,17 +1,4 @@
-.header {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.status {
-  font-size: 32px;
-  font-weight: 300;
-
-  color: var(--white);
-}
-
-.postList {
+.usersList {
   width: 100%;
 
   display: grid;
@@ -20,29 +7,34 @@
   row-gap: 12px;
 
   margin: 12px 0 0 0;
-  padding: 0;
+  padding: 0 0 12px 0;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 1400px) {
-  .postList {
+  .usersList {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (max-width: 1200px) {
-  .postList {
+  .usersList {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 870px) {
-  .postList {
+  .usersList {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 580px) {
-  .postList {
+  .usersList {
     grid-template-columns: repeat(1, 1fr);
   }
 }

@@ -4,18 +4,40 @@
   gap: 6px;
 }
 
+.label > span {
+  position: absolute;
+
+  height: 30px;
+
+  padding: 8px 12px 0px 12px;
+
+  border-radius: 12px 12px 0 0;
+  background-color: var(--white);
+}
+
 .textarea {
+  margin: 38px 0 0 0;
+
   padding: 6px 12px;
 
   height: 200px;
   resize: none;
 
   border: none;
-  border-radius: 12px;
+  border-radius: 0 12px 12px 12px;
+
+  transition: all 0.3s ease-in;
 
   transition: all 0.3s ease-in;
 }
 
 .textarea:focus {
   outline: 2px solid var(--yellow-800);
+}
+
+.label:focus-within span {
+  box-shadow:
+    0 -1px 0 0 var(--yellow-800),
+    -1px 0 0 0 var(--yellow-800),
+    1px 0 0 0 var(--yellow-800);
 }

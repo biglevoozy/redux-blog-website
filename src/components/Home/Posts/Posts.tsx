@@ -22,7 +22,7 @@ const Posts = () => {
   }, [dispatch]);
 
   return (
-    <div data-testid="posts-div" className={styles.wrapper}>
+    <div id="posts" data-testid="posts-div" className={styles.wrapper}>
       <PostList
         heading="All posts: "
         posts={posts}

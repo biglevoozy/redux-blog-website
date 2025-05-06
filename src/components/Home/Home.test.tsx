@@ -6,6 +6,6 @@ describe('test Home', () => {
   it('should properly render Home component', () => {
     const { getByText } = renderWithProviders(<Home />);
 
-    expect(getByText(/Redux /i)).toBeInTheDocument();
+    expect(getByText('Blog Website')).toBeInTheDocument();
   });
 });

@@ -6,4 +6,13 @@ export default {
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
     '^src/(.*)$': '<rootDir>/src/$1',
   },
+  coveragePathIgnorePatterns: [
+    'node_modules',
+    'test-config',
+    'interfaces',
+    'jestGlobalMocks.ts',
+    '\\.module\\.ts',
+    '<rootDir>/src/main.tsx',
+    '\\.mock\\.ts',
+  ],
 };
