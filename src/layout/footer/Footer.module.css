@@ -1,0 +1,10 @@
+.footer {
+  background-color: var(--yellow-800);
+
+  padding: 24px 12px;
+}
+
+.name {
+  font-size: 32px;
+  color: var(--white);
+}

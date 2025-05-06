@@ -10,6 +10,8 @@
 
   border: 1px solid var(--charcoal-400);
   border-radius: 12px;
+
+  background-color: var(--white);
 }
 
 .postCredentials {

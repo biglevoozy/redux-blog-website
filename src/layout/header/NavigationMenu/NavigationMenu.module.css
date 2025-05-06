@@ -1,0 +1,15 @@
+.list {
+  display: flex;
+  gap: 12px;
+}
+
+.item > a {
+  font-size: 20px;
+  color: var(--charcoal-main);
+
+  transition: all 0.3s ease;
+}
+
+.item:hover > a {
+  color: var(--white);
+}

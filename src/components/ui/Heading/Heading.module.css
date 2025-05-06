@@ -4,4 +4,8 @@
 
   margin: 0;
   padding: 12px 6px;
+
+  color: var(--white);
+
+  text-align: center;
 }
